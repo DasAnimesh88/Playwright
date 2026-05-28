@@ -1,0 +1,815 @@
+================================================================================
+         PLAYWRIGHT COMPLETE TRAINING AGENDA - BASIC TO ADVANCED
+         (Self Learning + Corporate Training + Real-Time Projects)
+================================================================================
+Duration  : 30 Days
+Daily Time: 3-4 Hours (Theory + Hands-on Practice)
+Audience  : Beginners to Advanced | QA Engineers | SDET | Developers
+================================================================================
+
+--------------------------------------------------------------------------------
+                          PHASE 1: FOUNDATION (Days 1-5)
+--------------------------------------------------------------------------------
+
+DAY 1 - Introduction to Playwright & Environment Setup
+--------------------------------------------------------
+Topics:
+  - What is Playwright? History and evolution
+  - Playwright vs Selenium vs Cypress vs WebdriverIO (comparison table)
+  - Playwright architecture and how it works internally
+  - Supported browsers: Chromium, Firefox, WebKit (Safari)
+  - Supported languages: JavaScript, TypeScript, Python, Java, C#
+  - Installing Node.js and VS Code
+  - Installing Playwright: npm init playwright@latest
+  - Project structure walkthrough
+  - playwright.config.ts explained in depth
+  - Running your first test
+  - Playwright CLI commands overview
+  - Playwright Test Runner vs standalone Playwright library
+  - Understanding headless vs headed mode
+Real-Time Scenario: Set up a Playwright project for an e-commerce application
+Interview Questions: 5 questions on Playwright basics
+MCQ: 10 questions
+
+DAY 2 - Playwright Core Concepts: Browser, Context & Page
+----------------------------------------------------------
+Topics:
+  - Browser, BrowserContext, and Page hierarchy
+  - Launching a browser: chromium.launch(), firefox.launch(), webkit.launch()
+  - Browser launch options: headless, slowMo, args, devtools
+  - Creating a BrowserContext: browser.newContext()
+  - Context options: viewport, locale, timezone, permissions, geolocation
+  - Creating a Page: context.newPage()
+  - Navigating pages: page.goto(), page.reload(), page.goBack(), page.goForward()
+  - Page lifecycle events: domcontentloaded, load, networkidle
+  - Closing resources: page.close(), context.close(), browser.close()
+  - Multiple contexts and pages (tabs)
+  - Incognito / isolated contexts
+  - Device emulation using devices dictionary
+Real-Time Scenario: Test a travel booking site with different device viewports
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 3 - Locators and Selectors (Deep Dive)
+------------------------------------------
+Topics:
+  - What are locators? Playwright Locator API
+  - CSS selectors: #id, .class, tag, attribute
+  - XPath selectors: absolute and relative
+  - Text selectors: getByText(), getByLabel(), getByPlaceholder()
+  - Role-based selectors: getByRole() - ARIA roles
+  - Test ID selectors: getByTestId(), data-testid
+  - getByTitle(), getByAltText()
+  - Chaining locators: locator().locator()
+  - Filtering locators: locator.filter({ hasText })
+  - nth(), first(), last() on locators
+  - has and hasNot filters
+  - Locator best practices (stability, maintainability)
+  - Playwright Inspector and locator generation
+  - page.locator() vs page.$ vs page.$$ (legacy)
+  - Waiting strategies built into locators
+Real-Time Scenario: Locate elements on Amazon/Flipkart product pages
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 4 - Actions and Interactions
+---------------------------------
+Topics:
+  - Clicking: click(), dblclick(), clickCount, button options
+  - Typing: fill(), type(), pressSequentially()
+  - Keyboard actions: press(), keyboard.press(), keyboard.type()
+  - Mouse actions: mouse.move(), mouse.click(), mouse.wheel()
+  - Hover: hover()
+  - Focus and blur: focus(), blur()
+  - Drag and drop: dragTo(), mouse drag sequence
+  - File upload: setInputFiles()
+  - Checkboxes and Radio buttons: check(), uncheck(), isChecked()
+  - Select dropdowns: selectOption() - by value, label, index
+  - Scrolling: page.evaluate() with scrollIntoView, wheel events
+  - Clear input: clear()
+  - Right-click / context menu
+  - Tap for mobile
+Real-Time Scenario: Fill and submit a job application form with file upload
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 5 - Assertions in Playwright
+----------------------------------
+Topics:
+  - expect() API overview
+  - Web-first assertions (auto-waiting)
+  - toBeVisible(), toBeHidden(), toBeEnabled(), toBeDisabled()
+  - toHaveText(), toContainText(), toHaveValue()
+  - toHaveCount(), toHaveAttribute(), toHaveClass(), toHaveCSS()
+  - toBeChecked(), toBeEmpty(), toBeFocused()
+  - toBeOK() for API responses
+  - Soft assertions: expect.soft()
+  - Custom error messages in assertions
+  - Assertion timeout configuration
+  - Negating assertions: .not.
+  - Snapshot assertions: toMatchSnapshot(), toHaveScreenshot()
+  - expect.poll() for custom polling
+  - Page-level assertions: toHaveTitle(), toHaveURL()
+Real-Time Scenario: Assert product price, availability on e-commerce checkout page
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+--------------------------------------------------------------------------------
+                     PHASE 2: INTERMEDIATE (Days 6-12)
+--------------------------------------------------------------------------------
+
+DAY 6 - Waiting Strategies & Auto-Waiting
+------------------------------------------
+Topics:
+  - Playwright's built-in auto-waiting explained
+  - Actionability checks: visible, stable, enabled, editable, attached
+  - page.waitForSelector() (legacy and modern)
+  - page.waitForLoadState(): load, domcontentloaded, networkidle
+  - page.waitForURL()
+  - page.waitForFunction()
+  - page.waitForTimeout() - when to use and avoid
+  - page.waitForResponse(), page.waitForRequest()
+  - Waiting for navigation: page.waitForNavigation()
+  - locator.waitFor() with state options
+  - expect.poll() for dynamic conditions
+  - Race conditions and how to handle them
+  - Common timeout errors and debugging
+Real-Time Scenario: Handle dynamic content loading on a SPA (Single Page App)
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 7 - Test Structure with Playwright Test Runner
+----------------------------------------------------
+Topics:
+  - test() function structure
+  - describe() blocks for grouping
+  - beforeAll, afterAll, beforeEach, afterEach hooks
+  - test.only(), test.skip(), test.fixme(), test.fail()
+  - test.slow() for extending timeout
+  - Tags and annotations: @smoke, @regression, custom tags
+  - Parameterized tests with test.each and for loops
+  - Custom test annotations
+  - test.step() for better reporting
+  - Worker assignment and test isolation
+  - Fixtures introduction (built-in: page, context, browser, browserName)
+  - TestInfo object: title, file, retry, outputDir
+  - Running specific tests by title, file, grep
+Real-Time Scenario: Organize test suite for a banking application
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 8 - Custom Fixtures & Test Configuration
+--------------------------------------------
+Topics:
+  - Understanding Playwright fixtures in depth
+  - Creating custom fixtures with test.extend()
+  - Fixture scope: test, worker
+  - Overriding built-in fixtures
+  - Sharing fixtures across files
+  - Fixture teardown with yield
+  - Passing fixtures between files using fixtures file pattern
+  - playwright.config.ts deep dive:
+      * projects configuration (multi-browser)
+      * globalSetup and globalTeardown
+      * testDir, outputDir, snapshotDir
+      * use options: baseURL, viewport, screenshot, video, trace
+      * reporter configuration
+      * retries, timeout, workers
+      * forbidOnly flag for CI
+  - Environment-based configuration
+  - .env files with dotenv
+Real-Time Scenario: Create fixtures for authenticated user sessions
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 9 - Page Object Model (POM) Design Pattern
+-----------------------------------------------
+Topics:
+  - What is POM and why use it?
+  - POM vs App Actions vs Component Object Model
+  - Creating a base Page class
+  - Creating page-specific classes (LoginPage, HomePage, etc.)
+  - Locators as class properties
+  - Action methods in page classes
+  - Constructor pattern with Playwright Page
+  - Returning page objects for chaining
+  - POM with TypeScript (types and interfaces)
+  - Handling navigation between page objects
+  - Reusable component objects (Header, Footer, Navbar)
+  - POM anti-patterns to avoid
+  - Maintaining POM at scale
+Real-Time Scenario: Build POM for a complete e-commerce flow (login → search → cart → checkout)
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 10 - Handling Complex UI Elements
+--------------------------------------
+Topics:
+  - Iframes: frameLocator(), frame(), frames()
+  - Nested iframes handling
+  - Shadow DOM: pierce CSS selectors
+  - Popups and new tabs: page.waitForEvent('popup')
+  - Alert, Confirm, Prompt dialogs: page.on('dialog')
+  - File download: page.waitForEvent('download')
+  - New window handling
+  - Tooltips and hover menus
+  - Date pickers (calendar widgets)
+  - Multi-select dropdowns
+  - Autocomplete / typeahead inputs
+  - Rich text editors (CKEditor, TinyMCE, Quill)
+  - Infinite scroll handling
+  - Canvas elements
+Real-Time Scenario: Handle payment iframe on checkout, file download from dashboard
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 11 - Network Interception & Mocking
+-----------------------------------------
+Topics:
+  - page.route() for request interception
+  - Aborting requests: route.abort()
+  - Fulfilling requests with mock data: route.fulfill()
+  - Modifying requests: route.continue() with overrides
+  - Mocking API responses with JSON data
+  - Intercepting specific URL patterns (glob, regex)
+  - route.fetch() - real network + modify response
+  - Blocking ads, trackers, images for faster tests
+  - page.on('request') and page.on('response') events
+  - Inspecting request/response details
+  - Waiting for specific network calls
+  - HAR (HTTP Archive) recording and replaying
+  - Network conditions simulation
+  - API response recording for offline testing
+Real-Time Scenario: Mock product API to test UI with controlled data
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 12 - API Testing with Playwright
+--------------------------------------
+Topics:
+  - Why use Playwright for API testing?
+  - APIRequestContext: request fixture
+  - Making GET, POST, PUT, PATCH, DELETE requests
+  - Setting headers, auth tokens
+  - Sending request body: JSON, form data
+  - Handling response: status, body, json(), text()
+  - APIResponse assertions: toBeOK(), toHaveStatus()
+  - Chaining API + UI tests (hybrid testing)
+  - Authenticating via API before UI tests
+  - Creating test data via API
+  - Cleaning up test data after tests
+  - Playwright API vs Axios/Supertest comparison
+  - Testing REST APIs end-to-end
+  - Bearer token authentication flow
+Real-Time Scenario: Create user via API, verify in UI, delete via API
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+--------------------------------------------------------------------------------
+                      PHASE 3: ADVANCED (Days 13-20)
+--------------------------------------------------------------------------------
+
+DAY 13 - Authentication Strategies
+-------------------------------------
+Topics:
+  - Login once, reuse session across tests
+  - storageState: saving and loading cookies + localStorage
+  - globalSetup for authentication
+  - Multiple user roles (admin, user, guest)
+  - Per-project authentication in playwright.config.ts
+  - OAuth2 and SSO login handling
+  - MFA / OTP handling strategies
+  - HTTP Basic Authentication
+  - Certificate-based authentication
+  - Cookie manipulation
+  - Local storage and session storage management
+  - Handling CSRF tokens
+  - Re-authentication on token expiry
+  - Google/GitHub OAuth in testing environment
+Real-Time Scenario: Multi-role testing for a project management tool
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 14 - Visual Testing & Screenshots
+---------------------------------------
+Topics:
+  - Screenshot capture: page.screenshot(), locator.screenshot()
+  - Screenshot options: fullPage, clip, omitBackground, animations
+  - Visual regression testing: toHaveScreenshot()
+  - Snapshot update workflow: --update-snapshots flag
+  - Configuring snapshot thresholds (maxDiffPixels, maxDiffPixelRatio)
+  - Masking dynamic elements in screenshots
+  - Cross-browser visual comparison
+  - Integrating with Percy / Applitools / Chromatic
+  - PDF generation: page.pdf()
+  - Pixel-perfect comparison strategies
+  - Managing snapshot files in CI
+  - Visual testing in dark mode / light mode
+  - Responsive visual testing across viewports
+Real-Time Scenario: Visual regression suite for a design system component library
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 15 - Tracing, Debugging & Reporting
+-----------------------------------------
+Topics:
+  - Playwright Trace Viewer: what it captures
+  - Enabling traces: on, off, on-first-retry, retain-on-failure
+  - Viewing traces: npx playwright show-trace
+  - Trace contents: actions, network, console, screenshots, DOM snapshots
+  - Playwright Inspector: PWDEBUG=1
+  - Debugging with VS Code extension: breakpoints, watch
+  - page.pause() for manual debugging
+  - console.log vs test.step() for debugging
+  - Built-in reporters:
+      * list, dot, line reporters (terminal)
+      * HTML reporter (interactive)
+      * JSON reporter
+      * JUnit reporter (CI integration)
+  - Custom reporters: implementing Reporter interface
+  - Allure Reporter integration
+  - Multiple reporters simultaneously
+  - Video recording: on, off, retain-on-failure
+  - Screenshot on failure configuration
+Real-Time Scenario: Set up complete observability for a CI pipeline
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 16 - CI/CD Integration
+----------------------------
+Topics:
+  - Running Playwright in CI: key considerations
+  - GitHub Actions: complete workflow YAML
+  - GitLab CI: .gitlab-ci.yml configuration
+  - Jenkins: Jenkinsfile with Playwright
+  - Azure DevOps: azure-pipelines.yml
+  - Docker: running Playwright in containers
+  - Official Playwright Docker images
+  - Environment variables in CI
+  - Sharding tests across CI machines
+  - Parallel execution in CI
+  - Uploading HTML report as artifact
+  - Uploading traces as artifact on failure
+  - Test result summary in PR comments
+  - Slack/Teams notifications on test failure
+  - Test environment management in pipelines
+Real-Time Scenario: Full CI/CD pipeline for automated test execution on PR
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 17 - Parallel Execution & Sharding
+----------------------------------------
+Topics:
+  - Playwright test parallelism fundamentals
+  - Workers: --workers flag, fullyParallel mode
+  - Test-level vs file-level parallelism
+  - Worker index and worker fixture
+  - Shared state problems and solutions
+  - Test isolation strategies for parallel execution
+  - Sharding: --shard=1/4, --shard=2/4 etc.
+  - Merging shard reports: blob reporter + merge-reports
+  - Database isolation for parallel tests
+  - Port conflicts in parallel tests
+  - Resource management: unique test data per worker
+  - Parallel API test execution
+  - Load testing considerations
+  - Optimal worker count based on machine specs
+Real-Time Scenario: Shard 200 regression tests across 4 CI machines
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 18 - Mobile & Cross-Browser Testing
+-----------------------------------------
+Topics:
+  - Playwright devices dictionary
+  - Emulating mobile devices: iPhone 15, Pixel 7, etc.
+  - Touch events: tap(), swipe gestures
+  - Mobile viewport and DPR (device pixel ratio)
+  - Mobile-specific locators and interactions
+  - Orientation: portrait vs landscape
+  - Cross-browser testing: Chromium, Firefox, WebKit
+  - Browser-specific quirks and workarounds
+  - Multi-project setup for cross-browser
+  - Running Safari tests with WebKit
+  - Browser version management
+  - BrowserStack / Sauce Labs / LambdaTest integration
+  - Playwright on real devices
+  - Accessibility testing across browsers
+Real-Time Scenario: Cross-browser + responsive test suite for a PWA
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 19 - Performance Testing & Web Vitals
+------------------------------------------
+Topics:
+  - Why performance testing with Playwright?
+  - Chrome DevTools Protocol (CDP) access
+  - Performance metrics: LCP, FCP, CLS, TTFB, TTI
+  - page.metrics() API
+  - PerformanceObserver in page.evaluate()
+  - Network throttling simulation
+  - CPU throttling with CDP
+  - Measuring page load time
+  - Resource timing API
+  - Lighthouse integration with Playwright
+  - Memory leak detection
+  - Long task detection
+  - Web Vitals library integration
+  - Performance budgets in tests
+  - Trends reporting over time
+Real-Time Scenario: Performance regression tests for a dashboard application
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 20 - Accessibility Testing
+--------------------------------
+Topics:
+  - Why accessibility testing matters (WCAG 2.1/2.2)
+  - @axe-core/playwright integration
+  - Running accessibility scans with checkA11y()
+  - Page-level vs component-level scans
+  - Filtering by WCAG level (A, AA, AAA)
+  - Excluding elements from scan
+  - Fixing common accessibility violations
+  - Keyboard navigation testing
+  - Tab order testing
+  - Screen reader simulation
+  - ARIA roles and attributes testing
+  - Color contrast testing
+  - Focus management testing
+  - Accessibility in CI pipeline
+  - Reporting accessibility issues
+Real-Time Scenario: Accessibility audit for a government portal application
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+--------------------------------------------------------------------------------
+                  PHASE 4: EXPERT & REAL-TIME PROJECTS (Days 21-30)
+--------------------------------------------------------------------------------
+
+DAY 21 - TypeScript with Playwright (Deep Dive)
+-------------------------------------------------
+Topics:
+  - Why TypeScript for Playwright?
+  - Setting up TypeScript configuration (tsconfig.json)
+  - Typing locators and page objects
+  - Generic types for fixtures
+  - Interfaces for page objects
+  - Enums for test data
+  - Type-safe test data factories
+  - Utility types: Partial, Required, Pick, Omit
+  - Custom type definitions
+  - Strict mode configuration
+  - Path aliases (@ imports)
+  - Decorators pattern in POM (optional)
+  - Type-safe environment configuration
+  - TypeScript compiler errors vs runtime errors
+Real-Time Scenario: Fully typed TypeScript framework for fintech application
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 22 - Advanced Framework Architecture
+------------------------------------------
+Topics:
+  - Framework folder structure best practices
+  - Layered architecture: tests → pages → components → utils
+  - Config management: multi-environment (dev, staging, prod)
+  - Test data management strategies:
+      * Static JSON files
+      * Faker.js for dynamic data
+      * Factory pattern
+      * Database seeding
+  - Constants and enums organization
+  - Helper utilities and custom commands
+  - Logging strategy (Winston, pino)
+  - Environment variable management (.env, dotenv-vault)
+  - Secrets management (never hardcode)
+  - Dependency injection in fixtures
+  - Singleton pattern for shared resources
+  - Error handling and retry logic
+Real-Time Scenario: Enterprise-grade framework scaffold for a SaaS product
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 23 - Database Integration & Test Data
+------------------------------------------
+Topics:
+  - Why integrate database in test automation?
+  - Connecting to databases: PostgreSQL, MySQL, MongoDB, MSSQL
+  - Using pg, mysql2, mongoose libraries
+  - Database fixtures for setup and teardown
+  - CRUD operations in tests
+  - Data validation: UI vs DB
+  - Resetting database state between tests
+  - Using transactions for rollback
+  - Seed scripts for test data
+  - Docker compose for test databases
+  - Data masking for production-like data
+  - Testing database constraints via UI
+  - Stored procedure and trigger validation
+  - NoSQL document validation
+Real-Time Scenario: End-to-end test with DB verification for an order management system
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 24 - Email & Notification Testing
+---------------------------------------
+Topics:
+  - Why test emails in automation?
+  - Mailhog: local fake SMTP server setup
+  - Mailosaur: cloud email testing service
+  - Ethereal Email for testing
+  - Accessing inbox via API
+  - Verifying email subject, body, links
+  - Testing email confirmation flows (registration)
+  - Password reset email flow testing
+  - OTP via email extraction
+  - SMS/OTP testing strategies (Twilio test credentials)
+  - In-app notification testing
+  - WebSocket notification testing
+  - Push notification stubs
+  - Email template visual regression
+Real-Time Scenario: Test complete registration → email verification → login flow
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 25 - WebSocket & Real-Time App Testing
+--------------------------------------------
+Topics:
+  - What are WebSockets?
+  - Intercepting WebSocket connections
+  - page.on('websocket') event
+  - WebSocket frame inspection
+  - Testing real-time chat applications
+  - Testing live dashboard updates
+  - Testing collaborative features
+  - Server-Sent Events (SSE) testing
+  - Polling vs WebSocket strategies
+  - Mocking WebSocket server responses
+  - Testing reconnection scenarios
+  - Load testing with WebSockets
+  - Playwright CDP for advanced network testing
+  - Testing GraphQL subscriptions
+Real-Time Scenario: Test a real-time collaboration tool (like Google Docs)
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 26 - Advanced Network & Security Testing
+---------------------------------------------
+Topics:
+  - Testing behind authentication proxies
+  - SSL/TLS certificate bypassing for test environments
+  - HTTP/2 testing considerations
+  - Cookie security attributes testing (HttpOnly, Secure, SameSite)
+  - CORS testing
+  - Content Security Policy testing
+  - XSS prevention verification (input sanitization tests)
+  - SQL injection detection via UI
+  - OWASP Top 10 basic checks with Playwright
+  - Rate limiting testing
+  - Session management testing
+  - Sensitive data exposure checks
+  - Security headers verification
+  - Authentication bypass attempts
+Real-Time Scenario: Security validation suite for a banking application login
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 27 - BDD with Playwright (Cucumber Integration)
+-----------------------------------------------------
+Topics:
+  - What is BDD? Gherkin syntax
+  - Feature files: Feature, Scenario, Given, When, Then
+  - @cucumber/cucumber with Playwright setup
+  - Step definitions implementation
+  - Background keyword
+  - Scenario Outline with Examples table
+  - Tags in BDD: @smoke, @regression, @wip
+  - Hooks in Cucumber: Before, After, BeforeAll, AfterAll
+  - World object in Cucumber
+  - Sharing state between steps
+  - Reporting with Cucumber HTML Reporter
+  - Allure BDD reporting
+  - Living documentation concept
+  - BDD vs TDD vs ATDD comparison
+Real-Time Scenario: BDD feature file for an insurance quote generation flow
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 28 - Component Testing with Playwright
+--------------------------------------------
+Topics:
+  - Playwright Component Testing overview
+  - Supported frameworks: React, Vue, Svelte, Solid
+  - Setting up component testing: @playwright/experimental-ct-*
+  - Writing component tests
+  - Mounting components with mount()
+  - Passing props, events, slots
+  - Testing component interactions
+  - Component vs E2E testing strategy
+  - Visual testing for components
+  - Storybook integration
+  - Component test isolation
+  - Testing hooks and state
+  - Mocking dependencies in components
+  - Component testing in CI
+Real-Time Scenario: Component test suite for a React design system
+Interview Questions: 5 questions
+MCQ: 10 questions
+
+DAY 29 - Real-Time Project 1: E-Commerce Test Suite
+-----------------------------------------------------
+Project: Complete Automation Suite for an E-Commerce Platform
+  
+  Application: https://www.saucedemo.com / Custom demo app
+  
+  Test Scenarios:
+    Module 1: Authentication
+      - Valid login with multiple user types
+      - Invalid login validations
+      - Logout functionality
+      - Session persistence
+    
+    Module 2: Product Catalog
+      - Product listing and sorting
+      - Product search and filters
+      - Product detail page validation
+      - Product image and description
+    
+    Module 3: Shopping Cart
+      - Add to cart
+      - Remove from cart
+      - Cart count validation
+      - Cart persistence across pages
+    
+    Module 4: Checkout
+      - Complete checkout flow
+      - Form validation
+      - Order summary verification
+      - Order confirmation
+    
+    Module 5: API Integration Tests
+      - Product API validation
+      - Cart API testing
+      - Order API end-to-end
+    
+  Framework Features Applied:
+    - TypeScript POM architecture
+    - Multi-environment config
+    - Parallel execution
+    - GitHub Actions CI/CD
+    - HTML + Allure reporting
+    - Visual regression
+    - API + UI hybrid tests
+
+DAY 30 - Real-Time Project 2: Banking / Fintech Test Suite
+------------------------------------------------------------
+Project: Automation Framework for Online Banking Application
+  
+  Application: https://parabank.parasoft.com or similar
+  
+  Test Scenarios:
+    Module 1: User Registration & Login
+      - New account registration
+      - Login with valid/invalid credentials
+      - Password reset flow
+      - Email verification
+    
+    Module 2: Account Management
+      - View account summary
+      - Transaction history with date filters
+      - Account statements download (PDF)
+    
+    Module 3: Fund Transfer
+      - Transfer between own accounts
+      - Transfer to external account
+      - Transfer limits validation
+      - Transaction confirmation
+    
+    Module 4: Bill Payment
+      - Add payee
+      - Schedule payment
+      - Payment history
+    
+    Module 5: Security Tests
+      - Session timeout
+      - Concurrent login prevention
+      - CSRF token validation
+    
+    Module 6: Performance
+      - Page load time benchmarks
+      - API response time checks
+    
+  Framework Features Applied:
+    - BDD with Cucumber
+    - Database integration for validation
+    - Multi-role authentication
+    - Security test scenarios
+    - Performance benchmarks
+    - Full CI/CD with sharding
+
+================================================================================
+                    BONUS TOPICS (Covered Throughout Training)
+================================================================================
+
+  Bonus 1: Playwright Codegen (Auto-recording tests)
+  Bonus 2: VS Code Playwright Extension features
+  Bonus 3: Test tagging and filtering strategies
+  Bonus 4: Migrating from Selenium to Playwright
+  Bonus 5: Playwright with Electron app testing
+  Bonus 6: Playwright MCP (Model Context Protocol) - AI-assisted testing
+  Bonus 7: Mock Service Worker (MSW) integration
+  Bonus 8: GraphQL API testing with Playwright
+  Bonus 9: Test Coverage tracking
+  Bonus 10: Playwright with Storybook
+
+================================================================================
+                         DAILY LEARNING STRUCTURE
+================================================================================
+
+  Each Day Follows This Pattern:
+  ┌─────────────────────────────────────────────────────────┐
+  │  1. Theory (45 min)    - Concepts & Architecture        │
+  │  2. Syntax (30 min)    - Code examples with explanation │
+  │  3. Hands-on (60 min)  - Live coding practice           │
+  │  4. Real Scenario(30m) - Industry use case              │
+  │  5. Interview Qs(15m)  - 5 interview questions          │
+  │  6. MCQ Quiz (15min)   - 10 multiple choice questions   │
+  │  7. Assignment (30min) - Practice task to do yourself   │
+  └─────────────────────────────────────────────────────────┘
+
+================================================================================
+                         TOOLS & RESOURCES
+================================================================================
+
+  Required Tools:
+  - Node.js (LTS version): https://nodejs.org
+  - VS Code: https://code.visualstudio.com
+  - Git: https://git-scm.com
+  - Playwright VS Code Extension (Microsoft)
+  - Docker Desktop (for Day 16+)
+
+  Practice Applications:
+  - https://www.saucedemo.com               (E-commerce)
+  - https://parabank.parasoft.com           (Banking)
+  - https://demoqa.com                      (UI elements)
+  - https://www.automationexercise.com      (E-commerce)
+  - https://reqres.in                       (REST API)
+  - https://jsonplaceholder.typicode.com    (REST API)
+  - https://the-internet.herokuapp.com      (Complex UI)
+  - https://todomvc.com                     (SPA)
+
+  Key npm Packages:
+  - @playwright/test                (core)
+  - @axe-core/playwright            (accessibility)
+  - @cucumber/cucumber              (BDD)
+  - allure-playwright               (reporting)
+  - faker-js / @faker-js/faker      (test data)
+  - dotenv                          (env variables)
+  - pg / mysql2 / mongoose          (databases)
+
+================================================================================
+                         INTERVIEW PREPARATION SUMMARY
+================================================================================
+
+  Topics Most Frequently Asked in Interviews:
+  1.  Playwright vs Selenium vs Cypress differences
+  2.  Auto-waiting mechanism in Playwright
+  3.  Page Object Model implementation
+  4.  How to handle iframes, popups, dialogs
+  5.  Network interception and API mocking
+  6.  storageState for authentication
+  7.  Fixtures and their scopes
+  8.  Parallel execution and sharding
+  9.  CI/CD integration (GitHub Actions)
+  10. Visual regression testing approach
+  11. TypeScript with Playwright
+  12. Locator strategies and best practices
+  13. Retry mechanism and flaky test handling
+  14. Reporting (HTML, Allure, JUnit)
+  15. BDD with Playwright
+
+================================================================================
+                              CERTIFICATION PATH
+================================================================================
+
+  After completing 30 days:
+  - ISTQB Foundation Level (if not done)
+  - ISTQB Agile Tester
+  - AWS/Azure Fundamentals (for cloud CI/CD understanding)
+  - Playwright certification through LambdaTest / Udemy courses
+
+================================================================================
+  NOTE: Each day will have a dedicated file with:
+        - Complete syntax examples
+        - Code snippets (copy-paste ready)
+        - Real-time scenario with full solution code
+        - 5 Interview questions with detailed answers
+        - 10 MCQs with answer key
+        - Hands-on assignment
+================================================================================
+
+                    TOTAL: 30 DAYS | 150 INTERVIEW QUESTIONS
+                           300 MCQs | 30 REAL-TIME SCENARIOS
+                           2 COMPLETE PROJECT IMPLEMENTATIONS
+================================================================================
